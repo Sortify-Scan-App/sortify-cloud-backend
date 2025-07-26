@@ -1,11 +1,11 @@
 const { storeUser, getUser } = require('../services/firestore');
-const { v4: uuidv4 } = require('uuid'); // Untuk membuat ID unik
-const bcrypt = require('bcrypt'); //hash
-const jwt = require('jsonwebtoken'); //token
+const { v4: uuidv4 } = require('uuid'); 
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const { sendOtpEmail } = require('../utils/email');
 const { generateOtp } = require('../utils/otp');
 
-// Temporary storage for OTPs (in-memory, replace with Redis or DB in production)
+// Temporary storage for OTPs
 const otpStore = new Map();
 // Fungsi untuk Register User
 const registerUser = async (req, h) => {
